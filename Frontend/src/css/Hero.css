@@ -1,0 +1,131 @@
+/* Hero Section - Full Background */
+.hero-wrapper {
+  width: 100vw; /* Ensure it doesn't go beyond viewport width */
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  background: url('../assets/filter.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px 0;
+}
+
+
+/* Dark Overlay for Readability */
+.hero-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Content */
+.hero {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px; /* Ensures proper alignment */
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.hero-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Input Box Styles */
+.box {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+  color: white;
+}
+
+.box span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.box input,
+.box select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: black;
+}
+
+/* Radio Button Group */
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Search Button */
+.btn1 {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn1:hover {
+  background: #cc5500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 28px;
+  }
+
+  .hero p {
+      font-size: 16px;
+  }
+
+  .hero-form {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      padding: 15px;
+  }
+}

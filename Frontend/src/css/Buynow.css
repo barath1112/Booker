@@ -1,0 +1,79 @@
+/* General Styling */
+.buy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+/* Payment Box */
+.buy-payment-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/* Error & Success Messages */
+.buy-error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.buy-success {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Input Fields */
+.buy-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Card Details (Expiry & CVV) */
+.buy-card-details {
+    display: flex;
+    gap: 10px;
+}
+
+.buy-input-small {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Payment Button */
+.buy-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff6600;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #cc5500;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .buy-payment-box {
+        width: 90%;
+    }
+}
