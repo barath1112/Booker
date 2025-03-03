@@ -38,6 +38,14 @@ public class PropertyController {
         return propertyRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Property> getPropertyById(@PathVariable Long id) {
+        return propertyRepository.findById(id)
+            .map(ResponseEntity::ok)  // Returns 200 OK with the property if found
+            .orElseGet(() -> ResponseEntity.notFound().build()); // Returns 404 Not Found if not found
+    }
+
+    
     // ✏️ Update Property by ID
     @PutMapping("/{id}")
     public ResponseEntity<Property> updateProperty(@PathVariable Long id, @RequestBody Property updatedProperty) {
@@ -68,13 +76,6 @@ public class PropertyController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
-
- // 🔍 Get Property by ID
-    @GetMapping("/{id}")
-    public ResponseEntity<Property> getPropertyById(@PathVariable Long id) {
-        Optional<Property> property = propertyRepository.findById(id);
-        return property.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // 🔘 Toggle Hide/Unhide Property by ID
