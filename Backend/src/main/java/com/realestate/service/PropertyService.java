@@ -23,6 +23,11 @@ public class PropertyService {
     public List<Property> getAllProperties() {
         return propertyRepository.findAll();
     }
+    
+    public Property getPropertyById(Long id) {
+        return propertyRepository.findById(id).orElse(null);
+    }
+
 
     // ✏️ Update an existing property
     public Property updateProperty(Long id, Property updatedProperty) {
@@ -35,7 +40,6 @@ public class PropertyService {
             property.setPrice(updatedProperty.getPrice());
             property.setImage(updatedProperty.getImage());
             property.setLocation(updatedProperty.getLocation());
-            
 
 
             return propertyRepository.save(property);
